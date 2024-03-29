@@ -23,7 +23,7 @@ BrainByte is an AI-powered education platform designed to help students discover
 - **Jinja2:** A modern and designer-friendly templating language for Python.
 
 ## Getting Started
-
+<!--  -->
 ### Prerequisites
 
 - Install Python: [Download Python](https://www.python.org/downloads/)
