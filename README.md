@@ -1,6 +1,6 @@
 # BrainByte 
 ## Your Personalized Learning Journey Starts Here
-
+ 
 BrainByte is an AI-powered education platform designed to help students discover their passions and embark on a personalized learning journey. By leveraging advanced technologies such as generative AI models and natural language processing, BrainByte offers tailored course recommendations, personalized learning paths, and interactive content to enhance the learning experience.
 
 ## Features
@@ -61,7 +61,22 @@ BrainByte is an AI-powered education platform designed to help students discover
 We welcome contributions from the community. If you'd like to contribute to BrainByte, please follow our [contribution guidelines](CONTRIBUTING.md).
 
 ## License
+<!-- For testing : 
+Academic Free License v3.0	AFL-3.0
+Apache license 2.0	Apache-2.0
+Artistic license 2.0	Artistic-2.0
+Boost Software License 1.0	BSL-1.0
+BSD 2-clause "Simplified" license	BSD-2-Clause
+BSD 3-clause "New" or "Revised" license	BSD-3-Clause
+BSD 3-clause Clear license	BSD-3-Clause-Clear
+BSD 4-clause "Original" or "Old" license	BSD-4-Clause
+BSD Zero-Clause license	0BSD
+Creative Commons license family	CC
+Creative Commons Zero v1.0 Universal	CC0-1.0
+Creative Commons Attribution 4.0	CC-BY-4.0
+Creative Commons Attribution ShareAlike 4.0	CC-BY-SA-4.0
 
+--> 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Support
