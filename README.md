@@ -79,6 +79,30 @@ Creative Commons Attribution ShareAlike 4.0	CC-BY-SA-4.0
 --> 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+# Testing_2
+Do What The F*ck You Want To Public License	WTFPL
+Educational Community License v2.0	ECL-2.0
+Eclipse Public License 1.0	EPL-1.0
+Eclipse Public License 2.0	EPL-2.0
+European Union Public License 1.1	EUPL-1.1
+GNU Affero General Public License v3.0	AGPL-3.0
+GNU General Public License family	GPL
+GNU General Public License v2.0	GPL-2.0
+GNU General Public License v3.0	GPL-3.0
+GNU Lesser General Public License family	LGPL
+GNU Lesser General Public License v2.1	LGPL-2.1
+GNU Lesser General Public License v3.0	LGPL-3.0
+ISC	ISC
+LaTeX Project Public License v1.3c	LPPL-1.3c
+Microsoft Public License	MS-PL
+MIT	MIT
+Mozilla Public License 2.0	MPL-2.0
+Open Software License 3.0	OSL-3.0
+PostgreSQL License	PostgreSQL
+SIL Open Font License 1.1	OFL-1.1
+University of Illinois/NCSA Open Source License	NCSA
+The Unlicense	Unlicense
+zLib License	Zlib
 ## Support
 
 For any inquiries or support requests, please contact us at [rajuljha](https://github.com/rajuljha) or [tayyab-ilyas](https://github.com/tayyab-ilyas)
