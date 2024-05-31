@@ -58,3 +58,8 @@ def show_topic(request, topic_name):
         return render(request, 'courses/playlist.html', context)
     else:
         return render(request, 'courses/playlist.html', {'topic_name': topic_name})
+
+# Copyright 2024 Tayyab Ilyas and Rajul Jha
+# Microsoft Public License	MS-PL
+# MIT	MIT
+# Mozilla Public License 2.0

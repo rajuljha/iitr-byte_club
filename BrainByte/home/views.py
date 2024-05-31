@@ -1,3 +1,4 @@
+# Copyright 2024 Tayyab Ilyas and Rajul Jha
 from django.shortcuts import render
 from app import get_courses_for_all_topics, topics
 from pprint import pprint 
