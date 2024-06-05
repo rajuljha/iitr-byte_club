@@ -1,2 +1,7 @@
 /venv
 .env
+format_diff.py
+plain_diff_2.txt
+plain_diff.txt
+tmp.txt
+try.py
