@@ -29,7 +29,7 @@ BrainByte is an AI-powered education platform designed to help students discover
 - Install Python: [Download Python](https://www.python.org/downloads/)
 - Install Git: [Download Git](https://git-scm.com/downloads)
 - Setup .env file in project root which includes YOUTUBE_API_v3 key
-
+<!-- # This content is owned by Mohammad Tayyab Ilyas Khan -->
 ### Installation
 
 1. Clone the project repository:
@@ -55,7 +55,7 @@ BrainByte is an AI-powered education platform designed to help students discover
     python manage.py runserver
 
 3. Access BrainByte in your web browser at **http://127.0.0.1:8000/**
-
+<!-- # This content is owned by Rajul Jha --> 
 ## Contributing
 
 We welcome contributions from the community. If you'd like to contribute to BrainByte, please follow our [contribution guidelines](CONTRIBUTING.md).
@@ -106,3 +106,5 @@ zLib License	Zlib
 ## Support
 
 For any inquiries or support requests, please contact us at [rajuljha](https://github.com/rajuljha) or [tayyab-ilyas](https://github.com/tayyab-ilyas)
+
+<!-- # This content is licensed under MIT License -->
