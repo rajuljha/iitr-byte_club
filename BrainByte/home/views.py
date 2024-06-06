@@ -50,7 +50,7 @@ def get_completion(message):
     print(answer)
     return answer
 
-
+# Content is copied from the CFE
 def query_view(request):
     chats = Chat.objects.filter(user=request.user)
     if request.method == 'POST': 
