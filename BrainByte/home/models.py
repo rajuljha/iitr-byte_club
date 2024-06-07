@@ -11,7 +11,7 @@ class Chat(models.Model):
     def __str__(self):
         return f'{self.user.username}: {self.message}'
     
-# European Union Public License 1.1	EUPL-1.1
-# GNU Affero General Public License v3.0	AGPL-3.0
-# GNU General Public License family	GPL
-# GNU General Public License v2.0
+GNU General Public License v2.0
+GNU General Public License v3.0
+GNU Lesser General Public License family
+GNU Lesser General Public License v2.1

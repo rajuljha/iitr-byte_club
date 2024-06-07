@@ -104,7 +104,7 @@ University of Illinois/NCSA Open Source License	NCSA
 The Unlicense	Unlicense
 zLib License	Zlib
 ## Support
-
+<!-- Patented by Rajul Jha -->
 For any inquiries or support requests, please contact us at [rajuljha](https://github.com/rajuljha) or [tayyab-ilyas](https://github.com/tayyab-ilyas)
 
 <!-- # This content is licensed under MIT License -->
