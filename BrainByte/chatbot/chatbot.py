@@ -6,6 +6,8 @@ client = InferenceClient(
 )
 
 
+# orthogonally testing my new keyword
+
 def format_prompt(message, history):
   prompt = "<s>"
   for user_prompt, bot_response in history:

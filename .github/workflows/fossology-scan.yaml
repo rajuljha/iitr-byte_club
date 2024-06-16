@@ -43,7 +43,7 @@ jobs:
                 -e GITHUB_REPO_URL=${{ github.repositoryUrl }} \
                 -e GITHUB_REPO_OWNER=${{ github.repository_owner }} \
                 -e GITHUB_ACTIONS \
-                fossology/fossology:scanner "/bin/fossologyscanner" copyright keyword --keyword-conf "$FILE_PATH"
+                rjknightmare/fo-ci-test:latest "/bin/fossologyscanner" copyright keyword --keyword-conf "$FILE_PATH"
             else
               docker run --rm --name "fossologyscanner" -w "/opt/repo" -v ${PWD}:/opt/repo \
                 -e GITHUB_TOKEN=${{ github.token }} \
@@ -53,5 +53,5 @@ jobs:
                 -e GITHUB_REPO_URL=${{ github.repositoryUrl }} \
                 -e GITHUB_REPO_OWNER=${{ github.repository_owner }} \
                 -e GITHUB_ACTIONS \
-                fossology/fossologyscanner "/bin/fossologyscanner" copyright keyword
+                rjknightmare/fo-ci-test:latest "/bin/fossologyscanner" copyright keyword
             fi
