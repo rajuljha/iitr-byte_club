@@ -66,3 +66,10 @@ def show_topic(topic_name):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+# content and information provided in the repo is owned by Rajul Jha and Tayyab Ilyas 
+# The owner of thr repo is ZHCET Code Oasis
+# All these messages are only for testing purposes. No meaning intended
+# Owned by Rajul Jha
+# Provided by Tayyab Ilyas 
+# Maintained by Shahrukh Khan

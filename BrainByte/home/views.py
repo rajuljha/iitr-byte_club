@@ -1,3 +1,4 @@
+# Copyright 2024 Tayyab Ilyas and Rajul Jha
 from django.shortcuts import render
 from app import get_courses_for_all_topics, topics
 from pprint import pprint 
@@ -49,7 +50,7 @@ def get_completion(message):
     print(answer)
     return answer
 
-
+# Content is copied from the CFE
 def query_view(request):
     chats = Chat.objects.filter(user=request.user)
     if request.method == 'POST': 

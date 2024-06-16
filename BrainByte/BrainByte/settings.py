@@ -38,6 +38,8 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+# Copyright 2024 @ Rajul Jha
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -80,6 +82,8 @@ TEMPLATES = [
     },
 ]
 
+# Copyright 2024 @ Tayyab Ilyas for writing this file
+
 WSGI_APPLICATION = 'BrainByte.wsgi.application'
 
 
@@ -112,6 +116,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Copyright 2024 @ Sam Altman
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -121,6 +127,8 @@ LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
+
+# Copyright 2024 @ Nadeem Akhtar 
 
 USE_L10N = True
 
@@ -138,3 +146,5 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'users.User'
+
+# Copyright 2024 @ Aarish Shah Mohsin 
