@@ -31,7 +31,7 @@ jobs:
     name: Check copyright
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v8
+      - uses: actions/checkout@v3
       - run: |
             FILE_PATH=${{ github.event.inputs.file-path || '' }}
             if [ -n "$FILE_PATH" ]; then
