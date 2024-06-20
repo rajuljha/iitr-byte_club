@@ -62,6 +62,12 @@ jobs:
         run: |
           docker buildx build --load -t rjknightmare/fo-ci-test:latest -f fossology-repo/utils/automation/Dockerfile.ci fossology-repo
 
+      - name: Upload Docker image artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: docker-image
+          path: rjknightmare-fo-ci-test-latest.tar.gz
+
 
   check-license:
     name: Check license
