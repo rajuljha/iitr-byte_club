@@ -62,6 +62,10 @@ jobs:
         run: |
           docker buildx build --load -t rjknightmare/fo-ci-test:latest -f fossology-repo/utils/automation/Dockerfile.ci fossology-repo
 
+      - name: Save Docker image as artifact
+        run: |
+          docker save rjknightmare/fo-ci-test:latest | gzip > rjknightmare-fo-ci-test-latest.tar.gz
+      
       - name: Upload Docker image artifact
         uses: actions/upload-artifact@v3
         with:
