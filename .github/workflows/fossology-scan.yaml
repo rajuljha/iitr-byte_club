@@ -119,7 +119,8 @@ jobs:
           FILE_PATH=${{vars.KEYWORD_CONF_FILE_PATH || '' }}
           echo "File Path : $FILE_PATH"
           echo "Root: $GITHUB_WORKSPACE + $FILE_PATH"
-          cat ${{ "$GITHUB_WORKSPACE" + "/" + "$FILE_PATH" }}
+          echo "${{ github.workspace }}/$FILE_PATH"
+          cat "${{ github.workspace }}/$FILE_PATH"
       
       - name: Run Fossology Scanner with custom keywords
         if: ${{ vars.KEYWORD_CONF_FILE_PATH != '' }}
