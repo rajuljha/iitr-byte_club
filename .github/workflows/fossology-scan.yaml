@@ -134,7 +134,7 @@ jobs:
             -e GITHUB_REPO_OWNER=${{ github.repository_owner }} \
             -e GITHUB_ACTIONS \
             rjknightmare/fo-ci-test:latest "/bin/fossologyscanner" copyright keyword \
-            --keyword-conf "${{ github.workspace }}/${{ vars.KEYWORD_CONF_FILE_PATH }}"
+            --keyword-conf ${{ github.workspace }}/${{ vars.KEYWORD_CONF_FILE_PATH }}
       
       - name: Run fossology scanner
         if: ${{ vars.KEYWORD_CONF_FILE_PATH == '' }}
