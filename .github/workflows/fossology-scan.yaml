@@ -118,10 +118,13 @@ jobs:
         run: |
           gunzip -c rjknightmare-fo-ci-test-latest.tar.gz | docker load
 
+      - name : Load env variables
+        run : |
+          FILE_PATH=${{vars.KEYWORD_CONF_FILE_PATH || '' }}
+          echo "File Path : $FILE_PATH"
+      
       - name: Run Fossology Scanner
         run: |
-            FILE_PATH=${{vars.KEYWORD_CONF_FILE_PATH || '' }}
-            echo "File Path : $FILE_PATH"
             if [ -n "$FILE_PATH" ]; then
               docker run --rm --name "fossologyscanner" -w "/opt/repo" -v ${PWD}:/opt/repo \
                 -e GITHUB_TOKEN=${{ github.token }} \
