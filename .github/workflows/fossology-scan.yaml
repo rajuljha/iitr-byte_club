@@ -5,11 +5,7 @@
 # name: Check diff for license with Fossology
 
 # on:
-#   pull_request:
-#     inputs:
-#       file-path:
-#         description: '/tmp.txt'
-#         required: false
+
 # jobs:
 #   check-license:
 #     name: Check license
@@ -33,28 +29,6 @@
 #     steps:
 #       - uses: actions/checkout@v3
 #       - run: |
-#             FILE_PATH=${{ github.event.inputs.file-path || '' }}
-#             if [ -n "$FILE_PATH" ]; then
-#               docker run --rm --name "fossologyscanner" -w "/opt/repo" -v ${PWD}:/opt/repo \
-#                 -e GITHUB_TOKEN=${{ github.token }} \
-#                 -e GITHUB_PULL_REQUEST=${{ github.event.number }} \
-#                 -e GITHUB_REPOSITORY=${{ github.repository }} \
-#                 -e GITHUB_API=${{ github.api_url }} \
-#                 -e GITHUB_REPO_URL=${{ github.repositoryUrl }} \
-#                 -e GITHUB_REPO_OWNER=${{ github.repository_owner }} \
-#                 -e GITHUB_ACTIONS \
-#                 rjknightmare/fo-ci-test:latest "/bin/fossologyscanner" copyright keyword --keyword-conf "$FILE_PATH"
-#             else
-#               docker run --rm --name "fossologyscanner" -w "/opt/repo" -v ${PWD}:/opt/repo \
-#                 -e GITHUB_TOKEN=${{ github.token }} \
-#                 -e GITHUB_PULL_REQUEST=${{ github.event.number }} \
-#                 -e GITHUB_REPOSITORY=${{ github.repository }} \
-#                 -e GITHUB_API=${{ github.api_url }} \
-#                 -e GITHUB_REPO_URL=${{ github.repositoryUrl }} \
-#                 -e GITHUB_REPO_OWNER=${{ github.repository_owner }} \
-#                 -e GITHUB_ACTIONS \
-#                 rjknightmare/fo-ci-test:latest "/bin/fossologyscanner" copyright keyword
-#             fi
 
 
 name: Check diff for license with Fossology
@@ -158,4 +132,3 @@ jobs:
                 -e GITHUB_REPO_URL=${{ github.repositoryUrl }} \
                 -e GITHUB_REPO_OWNER=${{ github.repository_owner }} \
                 -e GITHUB_ACTIONS \
-                rjknightmare/fo-ci-test:latest "/bin/fossologyscanner" copyright keyword
