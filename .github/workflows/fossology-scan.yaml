@@ -70,7 +70,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker buildx build -t rjknightmare/fo-ci-test:latest -f fossology-repo/utils/automation/Dockerfile.ci fossology-repo
+          docker buildx build --load -t rjknightmare/fo-ci-test:latest -f fossology-repo/utils/automation/Dockerfile.ci fossology-repo
 
 
   check-license:
