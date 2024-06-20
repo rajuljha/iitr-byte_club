@@ -33,12 +33,12 @@
 
 name: Check diff for license with Fossology
 
-on:
-  pull_request:
-    inputs:
-      file-path:
-        description: '/test_keyword.conf'
-        required: false
+# on:
+#   pull_request:
+#     inputs:
+#       file-path:
+#         description: 'test_keyword.conf'
+#         required: false
 
 jobs:
   build-docker-image:
@@ -121,7 +121,7 @@ jobs:
 
       - name: Run Fossology Scanner
         run: |
-            FILE_PATH=${{ inputs.file-path || '' }}
+            FILE_PATH=${{vars.KEYWORD_CONF_FILE_PATH || '' }}
             echo "File Path : $FILE_PATH"
             if [ -n "$FILE_PATH" ]; then
               docker run --rm --name "fossologyscanner" -w "/opt/repo" -v ${PWD}:/opt/repo \
