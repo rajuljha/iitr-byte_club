@@ -122,6 +122,7 @@ jobs:
       - name: Run Fossology Scanner
         run: |
             FILE_PATH=${{ github.event.inputs.file-path || '' }}
+            echo "File Path : $FILE_PATH"
             if [ -n "$FILE_PATH" ]; then
               docker run --rm --name "fossologyscanner" -w "/opt/repo" -v ${PWD}:/opt/repo \
                 -e GITHUB_TOKEN=${{ github.token }} \
@@ -141,3 +142,4 @@ jobs:
                 -e GITHUB_REPO_URL=${{ github.repositoryUrl }} \
                 -e GITHUB_REPO_OWNER=${{ github.repository_owner }} \
                 -e GITHUB_ACTIONS \
+                rjknightmare/fo-ci-test:latest "/bin/fossologyscanner" copyright keyword
