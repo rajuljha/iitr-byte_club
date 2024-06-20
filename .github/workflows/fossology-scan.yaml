@@ -120,6 +120,7 @@ jobs:
           echo "File Path : $FILE_PATH"
       
       - name: Run Fossology Scanner with custom keywords
+        if : $FILE_PATH != ''
         run: |
           docker run --rm --name "fossologyscanner" -w "/opt/repo" -v ${PWD}:/opt/repo \
             -e GITHUB_TOKEN=${{ github.token }} \
