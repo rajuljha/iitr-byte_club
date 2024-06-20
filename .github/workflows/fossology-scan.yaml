@@ -37,7 +37,7 @@ on:
   pull_request:
     inputs:
       file-path:
-        description: '/tmp.txt'
+        description: '/test_keyword.conf'
         required: false
 
 jobs:
@@ -122,7 +122,6 @@ jobs:
       - name: Run Fossology Scanner
         run: |
             FILE_PATH=${{ github.event.inputs.file-path || '' }}
-            echo "$github.event.inputs.file-path"
             if [ -n "$FILE_PATH" ]; then
               docker run --rm --name "fossologyscanner" -w "/opt/repo" -v ${PWD}:/opt/repo \
                 -e GITHUB_TOKEN=${{ github.token }} \

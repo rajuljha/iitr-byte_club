@@ -67,3 +67,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Support
 
 For any inquiries or support requests, please contact us at [rajuljha](https://github.com/rajuljha) or [tayyab-ilyas](https://github.com/tayyab-ilyas)
+
+
+stolen from
+stolen
+patented 
+licenses by
