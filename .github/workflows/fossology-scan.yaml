@@ -30,11 +30,10 @@
 #       - uses: actions/checkout@v3
 #       - run: |
 
-
 name: Check diff for license with Fossology
 
-# on:
-#   pull_request:
+on:
+  pull_request:
 #     inputs:
 #       file-path:
 #         description: 'test_keyword.conf'
