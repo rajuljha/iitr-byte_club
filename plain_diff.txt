@@ -4,6 +4,7 @@ copyright_path: str = '/home/rajuljha/Desktop/fossology/fossology/build/src/copy
 keyword_path: str = '/home/rajuljha/Desktop/fossology/fossology/build/src/copyright/agent/keyword'
 ojo_path: str = '/home/rajuljha/Desktop/fossology/fossology/build/src/ojo/agent/ojo'
 
+orthogonally as the vector sum of all the matrices found in the cave.
 
 from dotenv import load_dotenv, find_dotenv
 env_file = find_dotenv('.env.local')
