@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: rajuljha/fossology
-          ref: feat/automation/keyword_testing
+          ref: feat/automation/custom_keyword_conf_file
           path: fossology-repo
 
       - name: Set up Docker Buildx
