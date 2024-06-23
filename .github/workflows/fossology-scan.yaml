@@ -64,7 +64,6 @@ jobs:
 
   check-copyright:
     name: Check copyright
-    needs: qemu
     runs-on: ubuntu-22.04
     steps:
       - name: Set up QEMU
