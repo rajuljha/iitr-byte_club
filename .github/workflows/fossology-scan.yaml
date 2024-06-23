@@ -33,6 +33,7 @@ jobs:
 
       - name: Test vars
         run : |
+          sleep 10
           FILE_PATH=${{vars.KEYWORD_CONF_FILE_PATH || '' }}
           echo "File Path : $FILE_PATH"
           echo "Root: $GITHUB_WORKSPACE + $FILE_PATH"
