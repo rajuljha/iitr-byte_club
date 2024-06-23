@@ -4,57 +4,50 @@ on:
   pull_request:
 
 jobs:
-  build-docker-image:
-    name: Build Docker Image
-    runs-on: ubuntu-22.04
+  qemu:
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout this repository
-        uses: actions/checkout@v3
+      - 
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+  # build-docker-image:
+  #   name: Build Docker Image
+  #   runs-on: ubuntu-22.04
+  #   steps:
+  #     - name: Checkout this repository
+  #       uses: actions/checkout@v3
 
-      - name: Checkout specific branch of rajuljha/fossology repository
-        uses: actions/checkout@v3
-        with:
-          repository: rajuljha/fossology
-          ref: feat/automation/custom_keyword_conf_file
-          path: fossology-repo
+  #     - name: Checkout specific branch of rajuljha/fossology repository
+  #       uses: actions/checkout@v3
+  #       with:
+  #         repository: rajuljha/fossology
+  #         ref: feat/automation/custom_keyword_conf_file
+  #         path: fossology-repo
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+  #     - name: Set up Docker Buildx
+  #       uses: docker/setup-buildx-action@v2
 
-      - name: Build Docker image
-        run: |
-          docker buildx build --load -t rjknightmare/fo-ci-test:latest -f fossology-repo/utils/automation/Dockerfile.ci fossology-repo
+  #     - name: Build Docker image
+  #       run: |
+  #         docker buildx build --load -t rjknightmare/fo-ci-test:latest -f fossology-repo/utils/automation/Dockerfile.ci fossology-repo
 
-      - name: Save Docker image as artifact
-        run: |
-          docker save rjknightmare/fo-ci-test:latest | gzip > rjknightmare-fo-ci-test-latest.tar.gz
+  #     - name: Save Docker image as artifact
+  #       run: |
+  #         docker save rjknightmare/fo-ci-test:latest | gzip > rjknightmare-fo-ci-test-latest.tar.gz
       
-      - name: Upload Docker image artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: docker-image
-          path: rjknightmare-fo-ci-test-latest.tar.gz
+  #     - name: Upload Docker image artifact
+  #       uses: actions/upload-artifact@v3
+  #       with:
+  #         name: docker-image
+  #         path: rjknightmare-fo-ci-test-latest.tar.gz
 
 
   check-license:
     name: Check license
     runs-on: ubuntu-22.04
-    needs: build-docker-image
     steps:
       - uses: actions/checkout@v3
-
-      - name: Download Docker image artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: docker-image
-          path: .
-
-      - name: Load Docker image
-        run: |
-          gunzip -c rjknightmare-fo-ci-test-latest.tar.gz | docker load
-
-      - name: Run Fossology Scanner
-        run: |
+      - run: |
           docker run --rm --name "fossologyscanner" -w "/opt/repo" -v ${PWD}:/opt/repo \
             -e GITHUB_TOKEN=${{ github.token }} \
             -e GITHUB_PULL_REQUEST=${{ github.event.number }} \
@@ -63,33 +56,13 @@ jobs:
             -e GITHUB_REPO_OWNER=${{ github.repository_owner }} \
             -e GITHUB_API=${{ github.api_url }} \
             -e GITHUB_ACTIONS \
-            fossology/fossology:scanner "/bin/fossologyscanner" nomos ojo
+            rjknightmare/fo-ci-test:latest "/bin/fossologyscanner" nomos ojo
 
   check-copyright:
     name: Check copyright
     runs-on: ubuntu-22.04
-    needs: build-docker-image
     steps:
       - uses: actions/checkout@v3
-
-      - name: Download Docker image artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: docker-image
-          path: .
-
-      - name: Load Docker image
-        run: |
-          gunzip -c rjknightmare-fo-ci-test-latest.tar.gz | docker load
-
-      - name : Load env variables
-        run : |
-          FILE_PATH=${{vars.KEYWORD_CONF_FILE_PATH || '' }}
-          echo "File Path : $FILE_PATH"
-          echo "Root: $GITHUB_WORKSPACE + $FILE_PATH"
-          KEYWORD_FILE=${{ github.workspace }}/$FILE_PATH
-          cat "${{ github.workspace }}/$FILE_PATH"
-      
       - name: Run Fossology Scanner with custom keywords
         if: ${{ vars.KEYWORD_CONF_FILE_PATH != '' }}
         run: |

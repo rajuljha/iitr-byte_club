@@ -1,0 +1,70 @@
+# SPDX-FileCopyrightText: © 2020 Siemens AG
+# SPDX-FileCopyrightText: © anupam.ghosh@siemens.com
+# SPDX-FileCopyrightText: © gaurav.mishra@siemens.com
+
+# SPDX-License-Identifier: FSFAP
+
+stages:
+  - license
+
+license_check:
+  stage: license
+  image: rjknightmare/fo-ci-test:latest
+  script:
+    - /bin/fossologyscanner nomos ojo
+  only: [merge_requests]
+  artifacts:
+    paths:
+    - results
+    expire_in: 1 week
+    when: on_failure
+
+copyright_check:
+  stage: license
+  image: rjknightmare/fo-ci-test:latest
+  before_script:
+  - echo "$KEYWORD_CONF_FILE_PATH"
+  script: 
+    - >
+      if [ -n "$KEYWORD_CONF_FILE" ]; then
+        /bin/fossologyscanner copyright keyword --keyword-conf "$KEYWORD_CONF_FILE_PATH"
+      else
+        /bin/fossologyscanner copyright keyword
+      fi
+  only: [merge_requests]
+  artifacts:
+    paths:
+    - results
+    expire_in: 1 week
+    when: on_failure
+
+repo_license_scan:
+  stage: license
+  image: rjknightmare/fo-ci-test:latest
+  script:
+    - /bin/fossologyscanner repo nomos ojo --report SPDX_JSON
+  only: [tags]
+  artifacts:
+    paths:
+    - results
+    expire_in: 1 week
+    when: always
+#
+repo_sbom:
+  stage: license
+  image: rjknightmare/fo-ci-test:latest
+  before_script:
+  - echo "$KEYWORD_CONF_FILE_PATH"
+  script: 
+    - >
+      if [ -n "$KEYWORD_CONF_FILE" ]; then
+        /bin/fossologyscanner copyright keyword repo nomos ojo --report SPDX_JSON --keyword-conf "$KEYWORD_CONF_FILE_PATH"
+      else
+        /bin/fossologyscanner copyright keyword repo nomos ojo --report SPDX_JSON
+      fi
+  only: [tags]
+  artifacts:
+    paths:
+    - results
+    expire_in: 1 week
+    when: always
