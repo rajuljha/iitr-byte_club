@@ -50,8 +50,8 @@ jobs:
         uses: docker/setup-qemu-action@v3
       
       - name: Docker command 
-      - uses: actions/checkout@v3
-      - run: |
+        uses: actions/checkout@v3
+        run: |
           docker run --rm --name "fossologyscanner" -w "/opt/repo" -v ${PWD}:/opt/repo \
             -e GITHUB_TOKEN=${{ github.token }} \
             -e GITHUB_PULL_REQUEST=${{ github.event.number }} \
