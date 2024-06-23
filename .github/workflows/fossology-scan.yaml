@@ -4,14 +4,16 @@ on:
   pull_request:
 
 jobs:
-
   check-license:
     name: Check license
     runs-on: ubuntu-22.04
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
-      
+
       - name: Docker command 
         run: |
           docker run --rm --name "fossologyscanner" -w "/opt/repo" -v ${PWD}:/opt/repo \
@@ -34,16 +36,6 @@ jobs:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
-      - name: Test vars
-        run : |
-          sleep 10
-          FILE_PATH=${{vars.KEYWORD_CONF_FILE_PATH || '' }}
-          echo "File Path : $FILE_PATH"
-          echo "Root: $GITHUB_WORKSPACE + $FILE_PATH"
-          KEYWORD_FILE=${{ github.workspace }}/$FILE_PATH
-          cat "${{ github.workspace }}/$FILE_PATH"
-
-      
       - name: Run Fossology Scanner with custom keywords
         if: ${{ vars.KEYWORD_CONF_FILE_PATH != '' }}
         run: |
@@ -58,7 +50,7 @@ jobs:
             -e GITHUB_ACTIONS \
             rjknightmare/fo-ci-test:latest "/bin/fossologyscanner" copyright keyword \
             --keyword-conf ${{ vars.KEYWORD_CONF_FILE_PATH }} 
-      
+
       - name: Run fossology scanner
         if: ${{ vars.KEYWORD_CONF_FILE_PATH == '' }}
         run : |
