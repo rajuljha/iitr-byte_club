@@ -44,7 +44,7 @@ jobs:
 
   check-license:
     name: Check license
-    c
+    needs : qemu
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
