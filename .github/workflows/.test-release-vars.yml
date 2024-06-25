@@ -1,8 +1,7 @@
 name: "Test on: release workflow"
 on:
-  push:
-      branches:
-      - 'test_3'
+  release:
+    types: [published]
 
 jobs:
   check-license:
