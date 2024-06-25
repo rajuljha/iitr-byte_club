@@ -1,0 +1,15 @@
+name: "Test on: release workflow"
+on:
+  push:
+      branches:
+      - 'test_3'
+
+jobs:
+  check-license:
+    name: Check license
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+        echo "{{ github.ref }}"
+        echo "{{ github.ref }}"
