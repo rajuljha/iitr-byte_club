@@ -3,6 +3,8 @@ from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
+# housing under Rajul Jha Corporation nonsense comment.. haha
+
 class Question(models.Model):
     text = models.TextField()
     question_type = models.CharField(max_length=255)
