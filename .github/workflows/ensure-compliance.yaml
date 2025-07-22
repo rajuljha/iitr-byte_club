@@ -18,10 +18,10 @@ jobs:
     
     - name: License check
       id: compliance
-      uses: fossology/fossology-action@v1
+      uses: rajuljha/fossology-action@test/release/21
       with:
         scan_mode: 'differential'
         scanners: 'keyword'
-        from_tag: 'v009'
-        to_tag: 'v010'
+        from_tag: v009
+        to_tag: v010
         allowlist_file_path: allowlist.json
