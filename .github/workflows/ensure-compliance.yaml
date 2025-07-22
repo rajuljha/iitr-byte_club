@@ -22,4 +22,4 @@ jobs:
       with:
         scan_mode: ''
         scanners: 'nomos ojo copyright keyword'
-        report_format: 'SPDX_JSON'
+        # report_format: 'SPDX_JSON'
