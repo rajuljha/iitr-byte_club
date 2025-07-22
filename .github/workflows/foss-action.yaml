@@ -1,0 +1,50 @@
+name: Check foss-action
+
+on:
+  pull_request:
+#
+jobs:
+  compliance_check:
+    runs-on: ubuntu-latest
+    name: Perform Fossology Scan
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+
+      # - uses: valeriangalliat/action-sshd-cloudflared@v1
+
+      # - name: Debug env vars
+      #   run: |
+      #     echo $INPUT_ENVIRONMENT
+      #     echo $INPUT_REQUIREMENTS
+      #     echo $INPUT_PIPENV
+      #     echo $INPUT_POETRY
+      #     echo $GITHUB_ACTION
+      #     echo $GITHUB_WORKSPACE
+      #     echo #GITHUB_ENV
+
+      # - name: Generate Python SBOM
+      #   id : generate_sbom
+      #   uses: rajuljha/foss-action-python@v16
+      #   with:
+      #     requirements: true
+      
+      # - name: Use SBOM File
+      #   run: |
+      #     echo "SBOM file path: ${{ steps.generate_sbom.outputs.sbom_file_path }}"
+      #     echo "SBOM file path: "${{ github.workspace }}/sbom_py.json""
+      #     ls "${{ github.workspace }}"
+      #     cat "${{ github.workspace }}/sbom/sbom_py.json"
+
+      - name: Run foss-action
+        uses: rajuljha/fossology-action@v20
+        with:
+          scan_mode: "repo"
+          scanners: "nomos ojo copyright keyword"
+          # from_tag: "v005"
+          # to_tag: "v004"
+          allowlist_file_path: "whitelist.json"
+          keyword_conf_file_path: "test_keyword.conf"
+          report_format: "SPDX_YAML"
+          # download_deps: True 
+          sbom_folder: "${{ github.workspace }}/sbom"

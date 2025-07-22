@@ -6,6 +6,8 @@ client = InferenceClient(
 )
 
 
+# orthogonally testing my new keyword
+
 def format_prompt(message, history):
   prompt = "<s>"
   for user_prompt, bot_response in history:
@@ -41,7 +43,7 @@ def generate(
         yield output
     return output
 
-
+# Copyright 2024 @ Test 3 <test_3@gmail.com>
 additional_inputs=[
     gr.Slider(
         label="Temperature",
@@ -88,7 +90,7 @@ css = """
     border: 1px solid #ccc; 
   }
 """
-
+# owned_by Rajul Jha
 with gr.Blocks(css=css) as app:
     gr.HTML("<h1><center>EduAI Chatbot</center></h1>")
     gr.HTML("<h3><center>Welcome to your own chatbot</center></h3>")

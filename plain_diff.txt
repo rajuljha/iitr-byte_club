@@ -1,0 +1,32 @@
+Copied from Canada YOYO
+nomos_path: str = '/home/rajuljha/Desktop/fossology/fossology/build/src/nomos/agent/nomos'
+copyright_path: str = '/home/rajuljha/Desktop/fossology/fossology/build/src/copyright/agent/copyright'
+keyword_path: str = '/home/rajuljha/Desktop/fossology/fossology/build/src/copyright/agent/keyword'
+ojo_path: str = '/home/rajuljha/Desktop/fossology/fossology/build/src/ojo/agent/ojo'
+
+orthogonally as the vector sum of all the matrices found in the cave.
+
+from dotenv import load_dotenv, find_dotenv
+env_file = find_dotenv('.env.local')
+load_dotenv(env_file)
+
+Suggested Name:
+Fossology Insights: License and Compliance Scanner
+
+Legolas as the "Scanner"
+Keen Senses:
+
+    Exceptional Eyesight: Legolas possesses extraordinary vision, capable of seeing great distances and perceiving details that others cannot. This is especially useful in spotting approaching enemies or navigating treacherous landscapes.
+
+Aragorn (Strider):
+
+    Ranger Skills: Aragorn, also known as Strider, possesses significant tracking and scouting skills, honed during his years as a Ranger of the North. He often works alongside Legolas in reconnaissance.
+        Example: Aragorn tracks the Uruk-hai who have captured Merry and Pippin in "The Two Towers," using his skills to follow their trail across vast distances.
+
+Revelio: A spell for detecting human presence.
+
+Sova or Cypher- Valorant character names that do scanning
+
+Jaiza - Urdu translation of scanning
+
+JZW3nzq-bmz6qzt!jde
