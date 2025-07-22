@@ -5,7 +5,7 @@
     ],
     "exclude": [
         ".github/*",
-        "*/NomosTestFiles/*",
+        "NomosTestFiles/*",
         "README.md"
     ]
 }
