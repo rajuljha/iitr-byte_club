@@ -22,4 +22,5 @@ jobs:
       with:
         scan_mode: ''
         scanners: 'nomos ojo copyright keyword'
+        allowlist_file_path: allowlist.json
         # report_format: 'SPDX_JSON'

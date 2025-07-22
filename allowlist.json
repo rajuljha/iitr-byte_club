@@ -1,0 +1,10 @@
+{
+    "licenses": [
+        "GPL-2.0",
+        "NoWarranty"
+    ],
+    "exclude": [
+        ".github/*",
+        "README.md"
+    ]
+}
