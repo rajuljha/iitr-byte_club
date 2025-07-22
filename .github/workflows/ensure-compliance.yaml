@@ -1,0 +1,25 @@
+name: Ensure Compliance
+
+on:
+  push:
+    branches:
+      - test_5
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  compliance_check:
+    runs-on: ubuntu-latest
+    name: Scan using FOSSology
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    
+    - name: License check
+      id: compliance
+      uses: rajuljha/fossology-action@test/release/21
+      with:
+        scan_mode: ''
+        scanners: 'nomos ojo copyright keyword'
+        report_format: 'SPDX_JSON'
