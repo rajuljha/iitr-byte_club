@@ -1,0 +1,11 @@
+{
+    "licenses": [
+        "GPL-2.0",
+        "NoWarranty"
+    ],
+    "exclude": [
+        ".github/*",
+        "NomosTestFiles/*",
+        "README.md"
+    ]
+}
