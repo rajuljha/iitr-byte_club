@@ -3,7 +3,7 @@ name: Ensure Compliance
 on:
   push:
     branches:
-      - test_5
+      - test_7
   pull_request:
     branches:
       - main
@@ -20,8 +20,8 @@ jobs:
       id: compliance
       uses: rajuljha/fossology-action@test/release/21
       with:
-        scan_mode: 'differential'
-        scanners: 'keyword'
-        from_tag: v009
-        to_tag: v010
-        allowlist_file_path: allowlist.json
+        scan_mode: ''
+        scanners: 'nomos ojo copyright keyword'
+        # from_tag: v009
+        # to_tag: v010
+        # allowlist_file_path: allowlist.json
